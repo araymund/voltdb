@@ -214,12 +214,14 @@ CLEANING
 STAGING SOURCE FILES
 ***************************************
 -->
-<target name="stage_src">
-    <!-- copy source files -->
-    <copy todir="${build.client.dir}/src">
-      <fileset refid="vendor.src.files"/>
-      <fileset refid="client.src.files"/>
-    </copy>
+
+<target name="stage_src" >
+  <mkdir dir='${build.client.dir}' />
+  <!-- copy source files -->
+  <copy todir="${build.client.dir}/src">
+    <fileset refid="vendor.src.files"/>
+    <fileset refid="client.src.files"/>
+  </copy>
 </target>
 
 
@@ -285,7 +287,6 @@ JAVA COMPILATION
 -->
 
 <target name="compile" description="Compile all Java client source" depends="stage_src">
-    <mkdir dir='${build.client.dir}' />
 
     <!-- copy resources needed -->
     <copy todir="${build.client.dir}">
