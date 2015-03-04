@@ -218,7 +218,7 @@ STAGING SOURCE FILES
 <target name="stage_src" >
   <mkdir dir='${build.client.dir}' />
   <!-- copy source files -->
-  <copy todir="${build.client.dir}/src">
+  <copy todir="${build.clientsrc.dir}">
     <fileset refid="vendor.src.files"/>
     <fileset refid="client.src.files"/>
   </copy>
