@@ -951,7 +951,7 @@ JAVA COMPILATION
 <target name="compile" depends="catalog, dbbpool_gen, project_gen, deployment_gen, compile_core, compile_pro"
         description="Compile all Java source and test classes"/>
 
-<target name="compile_client">
+<target name="compile_client" depends="dbbpool_gen">
     <ant antfile="build-client.xml" target="compile" inheritAll="false">
         <property name="build" value="${build}"/>
     </ant>
